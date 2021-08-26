@@ -522,46 +522,6 @@ layout: default
 											</div>
 										</div>
 									</section>
-									<section class="elementor-section elementor-top-section elementor-element elementor-element-b41b6cc elementor-section-height-min-height elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="b41b6cc" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
-										<div class="elementor-container elementor-column-gap-default">
-											<div class="elementor-row">
-												<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a90230f" data-id="a90230f" data-element_type="column">
-													<div class="elementor-column-wrap elementor-element-populated">
-														<div class="elementor-widget-wrap">
-															<div class="elementor-element elementor-element-c498754 elementor-widget elementor-widget-wp-widget-custom_html" data-id="c498754" data-element_type="widget" data-widget_type="wp-widget-custom_html.default">
-																<div class="elementor-widget-container">
-																	<div class="textwidget custom-html-widget">
-																		<div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="4" data-expandifr="true" data-height="auto" data-snippets="true" data-clutchcompany-id="641969">
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-									<section class="elementor-section elementor-top-section elementor-element elementor-element-ebab8c5 elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ebab8c5" data-element_type="section">
-										<div class="elementor-container elementor-column-gap-default">
-											<div class="elementor-row">
-												<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-95e1742" data-id="95e1742" data-element_type="column">
-													<div class="elementor-column-wrap elementor-element-populated">
-														<div class="elementor-widget-wrap">
-															<div class="elementor-element elementor-element-da1a1f4 elementor-widget elementor-widget-spacer" data-id="da1a1f4" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner">
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
 									<section class="elementor-section elementor-top-section elementor-element elementor-element-32e5c5b elementor-section-stretched elementor-section-height-min-height elementor-hidden-phone elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="32e5c5b" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
 										<div class="elementor-container elementor-column-gap-no">
 											<div class="elementor-row">
@@ -791,6 +751,9 @@ layout: default
 											</div>
 										</div>
 									</section>
+
+									{% assign post = site.posts | last %}
+
 									<section class="elementor-section elementor-top-section elementor-element elementor-element-8de2d6e elementor-section-height-min-height elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="8de2d6e" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
 										<div class="elementor-container elementor-column-gap-default">
 											<div class="elementor-row">
@@ -800,7 +763,7 @@ layout: default
 															<div class="elementor-element elementor-element-7335671 elementor-widget elementor-widget-image" data-id="7335671" data-element_type="widget" data-widget_type="image.default">
 																<div class="elementor-widget-container">
 																	<div class="elementor-image">
-																		<img width="1360" height="908" src="/static/wp-content/uploads/2020/12/Recruitment-Interview.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="/static/wp-content/uploads/2020/12/Recruitment-Interview.jpg 1360w, /static/wp-content/uploads/2020/12/Recruitment-Interview-300x200.jpg 300w, /static/wp-content/uploads/2020/12/Recruitment-Interview-1024x684.jpg 1024w, /static/wp-content/uploads/2020/12/Recruitment-Interview-768x513.jpg 768w, /static/wp-content/uploads/2020/12/Recruitment-Interview-272x182.jpg 272w" sizes="(max-width: 1360px) 100vw, 1360px" />
+																		<img width="1360" height="908" src="{{ post.image }}" class="attachment-full size-full" alt="" loading="lazy" sizes="(max-width: 1360px) 100vw, 1360px" />
 																	</div>
 																</div>
 															</div>
@@ -825,9 +788,9 @@ layout: default
 															<div class="elementor-element elementor-element-94db577 elementor-button-info elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="94db577" data-element_type="widget" data-widget_type="button.default">
 																<div class="elementor-widget-container">
 																	<div class="elementor-button-wrapper">
-																		<a href="index.html?p=1557" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+																		<a href="{{ post.url }}" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 																			<span class="elementor-button-content-wrapper">
-																				<span class="elementor-button-text">read the article ></span>
+																				<span class="elementor-button-text">Read the article ></span>
 																			</span>
 																		</a>
 																	</div>

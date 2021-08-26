@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Made-To-Measure: Reef Technologies CEO on the company's custom recruitment proces"
+image: /assets/blog/recruitment-interview.jpg
 permalink: /recruitment-interview/
 author: Agnieszka Twardosz
 ---
