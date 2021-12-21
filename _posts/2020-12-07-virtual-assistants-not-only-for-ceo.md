@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Virtual assistants: not only for the CEO"
+headline: "Virtual assistants: not only for the CEO"
+headline_image: /assets/blog/virtual-assistants.jpg
+intro: Not that long ago, the idea of a &#8220;virtual assistant&#8221; sounded like something straight out of a&nbsp; science fiction movie. These days, however, scores of people cannot imagine working productively without their VAs. Remote workers, including programmers, find their services especially useful.
 permalink: /virtual-assistants/
 author: Agnieszka Twardosz
 ---

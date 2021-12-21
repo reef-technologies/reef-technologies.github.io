@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<div id="mid" class="to-move layout-full_fixed layout-no-edge layout-fixed no-sidebars">
+    <article id="content" class="clearfix" itemtype="https://schema.org/CreativeWork" itemscope>
+        <div class="content-limiter">
+            <div id="col-mask">
+
+                <div id="post-1557" class="content-box post-1557 post type-post status-publish format-standard has-post-thumbnail category-blog">
+                    <div class="formatter">
+                        <div class="hentry">
+                            <div class="real-content entry-content" itemprop="text">
+                                <div data-elementor-type="wp-post" data-elementor-id="1557" class="elementor elementor-1557" data-elementor-settings="[]">
+                                    <div class="elementor-inner">
+                                        <div class="elementor-section-wrap">
+                                            <section class="elementor-section elementor-top-section elementor-element elementor-element-54fdad75 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="54fdad75" data-element_type="section">
+                                                <div class="elementor-container elementor-column-gap-default">
+                                                    <div class="elementor-row">
+                                                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5080348d" data-id="5080348d" data-element_type="column">
+                                                            <div class="elementor-column-wrap elementor-element-populated">
+                                                                <div class="elementor-widget-wrap">
+                                                                    <div class="elementor-element elementor-element-372809da elementor-widget elementor-widget-text-editor" data-id="372809da" data-element_type="widget" data-widget_type="text-editor.default">
+                                                                        <div class="elementor-widget-container">
+                                                                            <div class="elementor-text-editor elementor-clearfix">
+                                                                                {{ content }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="posts-nav">
+                            {% if page.previous %}
+                                <a href="{{ page.previous.url }}" class="item next">
+                                    <span>Previous article</span>
+                                    <span class="title">{{ page.previous.title }}</span>
+                                    <span class="image">
+                                        <img width="160" height="100" src="{{ page.previous.headline_image }}" class="attachment-245x100x1x1x90 size-245x100x1x1x90 wp-post-image"/>
+                                    </span>
+                                </a>
+                            {% endif %}
+
+                            {% if page.next %}
+                                <a href="{{ page.next.url }}" class="item next">
+                                    <span>Next article</span>
+                                    <span class="title">{{ page.next.title }}</span>
+                                    <span class="image">
+                                        <img width="160" height="100" src="{{ page.next.headline_image }}" class="attachment-245x100x1x1x90 size-245x100x1x1x90 wp-post-image"/>
+                                    </span>
+                                </a>
+                            {% endif %}
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+</div>

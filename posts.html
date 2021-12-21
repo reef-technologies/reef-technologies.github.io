@@ -1,11 +1,86 @@
 ---
 layout: default
+headline: Blog
 permalink: /blog/
 ---
-<ul>
-  {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
-</ul>
+<div id="post-1442" class="content-box post-1442 page type-page status-publish has-post-thumbnail">
+  <div class="formatter">
+      <div class="real-content" itemprop="text">
+          <div data-elementor-type="wp-page" data-elementor-id="1442" class="elementor elementor-1442" data-elementor-settings="[]">
+              <div class="elementor-inner">
+                  <div class="elementor-section-wrap">
+                      <section class="elementor-section elementor-top-section elementor-element elementor-element-97f3dfa elementor-section-height-min-height elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="97f3dfa" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+                          <div class="elementor-container elementor-column-gap-default">
+                              <div class="elementor-row">
+                                  <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-70f43ce" data-id="70f43ce" data-element_type="column">
+                                      <div class="elementor-column-wrap elementor-element-populated">
+                                          <div class="elementor-widget-wrap">
+                                              <div class="elementor-element elementor-element-a2ebecd premium-blog-align-left elementor-widget elementor-widget-premium-addon-blog" data-id="a2ebecd" data-element_type="widget" data-widget_type="premium-addon-blog.default">
+                                                  <div class="elementor-widget-container">
+                                                      <div class="premium-blog">
+                                                          <div class="premium-blog-wrap premium-blog-list" data-page="1442">
+                                                            {% for post in site.posts %}
+                                                              <div class="premium-blog-post-outer-container">
+                                                                <div class="premium-blog-post-container premium-blog-skin-side">
+                                                                    <div class="premium-blog-thumb-effect-wrapper">
+                                                                        <div class="premium-blog-thumbnail-container premium-blog-trans-effect">
+                                                                            <img style="width: 270px; height: 200px !important;" src="{{ post.headline_image }}" class="attachment-full size-full" alt="" loading="lazy"/>
+                                                                        </div>
+                                                                        <div class="premium-blog-thumbnail-overlay">
+                                                                            <a class="elementor-icon" href="{{ post.permalink }}"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="premium-blog-content-wrapper ">
+                                                                        <div class="premium-blog-content-wrapper-inner">
+                                                                            <div class="premium-blog-inner-container">
+                                                                                <div class="premium-blog-entry-container">
+
+                                                                                    <h1 class="premium-blog-entry-title">
+                                                                                        <a href="{{ post.permalink }}">{{ post.title }}</a>
+                                                                                    </h1>
+
+                                                                                    <div class="premium-blog-entry-meta">
+
+                                                                                        <div class="premium-blog-post-author premium-blog-meta-data">
+                                                                                            <i class="fa fa-user fa-fw"></i>
+                                                                                            {{ post.author }}
+                                                                                        </div>
+
+                                                                                        <span class="premium-blog-meta-separator">•</span>
+                                                                                        <div class="premium-blog-post-time premium-blog-meta-data">
+                                                                                            <i class="fa fa-clock-o"></i>
+                                                                                            <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <p class="premium-blog-post-content">{{ post.intro }}</p>
+                                                                            <div class="premium-blog-excerpt-link-wrap"><a href="{{ post.permalink }}" class="premium-blog-excerpt-link elementor-button">Read More »</a></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                              </div>
+                                                            {% endfor %}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+          </div>
+          <div class="clear"></div>
+
+      </div>
+
+
+  </div>
+</div>
