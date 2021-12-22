@@ -33,7 +33,7 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
-
+recaptcha_site_key: 6LcKx74dAAAAABFTqUr1sjCbGwO_7fVAbEoqY5NA
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
