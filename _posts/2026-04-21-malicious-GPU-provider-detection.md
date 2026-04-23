@@ -16,15 +16,15 @@ author: Reef Technologies
 <p>One way to test whether appropriate hardware is provided is to run something on it and verify the result. LLMs are popular, so let’s run an open-source one. Since they require a lot of VRAM, choosing a model with the right number of parameters allows us to ensure that at least X GB of VRAM is available. But how do we do that?</p>
 <p>We started by taking a sample input. Then, we calculated the answer ourselves. Next, we compared the results and timing with the GPUs we needed to verify.</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/naive-implementation.jpg" style="max-width: 600px;" alt="Naive implementation of GPU verification">
+<img src="/assets/blog/malicious-GPU-provider-detection/naive-implementation.jpg" alt="Naive implementation of GPU verification">
 
 <p>Imagine you’re a malicious provider with 100 nodes (each providing some GPU power), one node is really powerful, while the others are garbage. You receive the same test request on all 100 nodes. Cheating is simple: you calculate a result on the strongest node. Then, share the answer with your other nodes, and they will act as if they did the calculation themselves.</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/cheating.jpg" style="max-width: 600px;" alt="Cheating scenario">
+<img src="/assets/blog/malicious-GPU-provider-detection/cheating.jpg"alt="Cheating scenario">
 
 <p>One may say, "Send different tasks to each node!"</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/distinct-tasks.jpg" style="max-width: 600px;" alt="Different tasks to each node">
+<img src="/assets/blog/malicious-GPU-provider-detection/distinct-tasks.jpg" alt="Different tasks to each node">
 
 <p>But now our poor validator has to know answers to all the questions, i.e., perform as many calculations as there are nodes in the system. That’s a lot of work!</p>
 <p>Also, aside from the problems above, let’s remember that we’re in the LLM era and we want to run LLMs on the GPUs, thus the validation task will likely not be just “2+2=?” but rather some text input completion using a huge LLM - so that we probe nodes on real-life tasks. And LLMs naturally introduce randomness - same input may produce different output - making direct comparison of validators’ and nodes’ answers unreliable.</p>
@@ -48,15 +48,15 @@ author: Reef Technologies
 <h3>Step 3: Prompt Batching</h3>
 <p>We started by creating multiple large “prompt batches,” each sized to push a GPU to its capacity (e.g., 240 prompts). We chose this particular batch size to optimize memory usage, throughput, and guaranteed determinism on our reference GPUs.</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/simple-batch.jpg" style="max-width: 600px;" alt="Prompt batching">
+<img src="/assets/blog/malicious-GPU-provider-detection/simple-batch.jpg" alt="Prompt batching">
 
 <p>It was at this stage that we made a critical discovery: <strong>a single prompt would result in different answers if we changed the batch size</strong>…</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/different-answer.jpg" style="max-width: 600px;" alt="Different batch size">
+<img src="/assets/blog/malicious-GPU-provider-detection/different-answer.jpg" alt="Different batch size">
 
 <p>…but remained the same while the batch size was kept the same, even if mixed with different prompts!</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/same-answer.jpg" style="max-width: 600px;" alt="Same batch size">
+<img src="/assets/blog/malicious-GPU-provider-detection/same-answer.jpg" alt="Same batch size">
 
 <p>Why is that? Changing the batch size can change the internal execution path. This leads to small numerical differences or different scheduling.</p>
 <p>This is important because we can “mix” prompts from different original batches into one test batch, as long as the new batch has the same total size.</p>
@@ -64,7 +64,7 @@ author: Reef Technologies
 <h3>Step 4: Mixing</h3>
 <p>So we can answer 240 prompts in one go. Any GPU can. That means we have to answer 240 x NUMBER_OF_NODES prompts to validate them? If we send only a single prompt to each node, malicious providers can pretend to have 240 nodes using a single GPU. Or maybe we can use this fact to our advantage? Can we?</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/yes-we-can.jpg" style="max-width: 600px;">
+<img src="/assets/blog/malicious-GPU-provider-detection/yes-we-can.jpg">
 
 <p>Let’s find answers for a batch of 240 prompts on trusted hardware, and then… split them up and hide them among “placeholder” prompts we don’t have answers to! So one answered batch yields 240 batches of:
 <ul>
@@ -73,7 +73,7 @@ author: Reef Technologies
 </ul>
 </p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/hiding-real-prompts.jpg" style="max-width: 800px;">
+<img src="/assets/blog/malicious-GPU-provider-detection/hiding-real-prompts.jpg">
 
 <p>But the tested nodes will not know which of the 240 they receive is the “real one”! They have to answer all of them (in a single go, that’s GPU vectori-batchi-black-hole-magification working). And we’ll only check the one answer. Only the one. Demotivating? Well, you’re a computer, deal with it. And if the answer doesn’t match the expected one, then:
 <ul>
@@ -102,7 +102,7 @@ Regardless of the reason, no money for that node!
 <p>Result? No more cheating!</p>
 <p>Each prompt from the original batches must create the same output in the test batch. This means they need to match in size and seed. If there’s any difference, it could signal problems with the GPU or the provider’s processes. We can now easily verify all the hardware we supply to our users, without needing a car mechanic to come along!</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/reward.jpg" style="max-width: 600px;" alt="No more cheating">
+<img src="/assets/blog/malicious-GPU-provider-detection/reward.jpg" alt="No more cheating">
 
 <h2>What Else Can We Do With This Approach?</h2>
 <p>Could this method be successfully applied to other computational problems? Absolutely. Feel free to experiment (and let us know)!</p>
