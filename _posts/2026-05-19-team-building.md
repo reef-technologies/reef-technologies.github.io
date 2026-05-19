@@ -32,5 +32,5 @@ author: Reef Technologies
   <figcaption>What it feels like to look into code Codex has been cooking for the last 16 hours. Axel actually forgot how to use stuff (that happens if you use agents too much).</figcaption>
 </figure>
 
-<p>Why are doing this? Because we've decided to do so during our Sociocracy 3.0 meetings. <a href="https://github.com/reef-technologies/handbook/blob/bc0f2b6aa722cf15f64c3bdd7ce90c7c27083cc5/agreements.md?plain=1#L332">Here</a> are the rules</p>. Rock and Stone! ... I mean Code and Test!
+<p>Why are doing this? Because we've decided to do so during our Sociocracy 3.0 meetings. <a href="https://github.com/reef-technologies/handbook/blob/bc0f2b6aa722cf15f64c3bdd7ce90c7c27083cc5/agreements.md?plain=1#L332">Here</a> are the rules</p>. Rock and Stone! . . . I mean Code and Test!
 </div>
