@@ -27,6 +27,7 @@ author: Reef Technologies
 
 <figure>
   <video controls muted loop playsinline preload="metadata" style="max-width: 100%; height: auto;">
+    <source src="/assets/blog/team-building/codex-16h.webm" type="video/webm">
     <source src="/assets/blog/team-building/codex-16h.mp4" type="video/mp4">
   </video>
   <figcaption>What it feels like to look into code Codex has been cooking for the last 16 hours. Axel actually forgot how to use stuff (that happens if you use agents too much).</figcaption>
