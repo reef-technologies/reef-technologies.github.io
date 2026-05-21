@@ -12,7 +12,7 @@ author: Reef Technologies
 
 <figure>
   <img src="/assets/blog/team-building/standup.jpg" alt="Our typical daily standup">
-  <figcaption>Our typical daily standup. Axel is sitting down, but we are a remote company, so we cannot really force him to do anything.</figcaption>
+  <figcaption>Our typical daily standup. Alex is sitting down, but we are a remote company, so we cannot really force him to do anything.</figcaption>
 </figure>
 
 <figure>
@@ -30,8 +30,8 @@ author: Reef Technologies
     <source src="/assets/blog/team-building/codex-16h.webm" type="video/webm">
     <source src="/assets/blog/team-building/codex-16h.mp4" type="video/mp4">
   </video>
-  <figcaption>What it feels like to look into code Codex has been cooking for the last 16 hours. Axel actually forgot how to use stuff (that happens if you use agents too much).</figcaption>
+  <figcaption>What it feels like to look into code Codex has been cooking for the last 16 hours. Alex actually forgot how to use stuff (that happens if you use agents too much).</figcaption>
 </figure>
 
-<p>Why are doing this? Because we've decided to do so during our Sociocracy 3.0 meetings. <a href="https://github.com/reef-technologies/handbook/blob/bc0f2b6aa722cf15f64c3bdd7ce90c7c27083cc5/agreements.md?plain=1#L332">Here</a> are the rules. Rock and Stone! . . . I mean Code and Test! </p>
+<p>Why are we doing this? Because we've decided to do so during our Sociocracy 3.0 meetings. <a href="https://github.com/reef-technologies/handbook/blob/bc0f2b6aa722cf15f64c3bdd7ce90c7c27083cc5/agreements.md?plain=1#L332">Here</a> are the rules. Rock and Stone! . . . I mean Code and Test! </p>
 </div>
