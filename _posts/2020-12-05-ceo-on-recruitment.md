@@ -8,6 +8,9 @@ permalink: /recruitment-interview/
 author: Agnieszka Twardosz
 ---
 <div class="elementor-text-editor elementor-clearfix">
+    <div class="elementor-alert elementor-alert-info" role="alert">
+        <span class="elementor-alert-description">This article was updated in <strong>May 2026</strong> to maintain accuracy and reflect recent changes.</span>
+    </div>
     <p><span style="font-weight: 400;">Despite several standard techniques dominating the IT recruitment industry, </span><b>Reef Technologies</b><span style="font-weight: 400;"> went against the grain and developed their own unique approach. I asked the CEO, </span><b>Paweł Polewicz</b><span style="font-weight: 400;">, to explain why he felt the need to innovate, describe the recruitment process that he adopted, and tell me about its positive impact on the company.</span></p>
     <p><b>Agnieszka: </b><span style="font-weight: 400;">There are quite a few common recruitment methods to choose from, and most software houses simply follow one of them when looking for new developers. What makes Reef Technologies different?</span></p>
     <p><b>Paweł: </b><span style="font-weight: 400;">In the past, we tried using some standard techniques, but the results were not satisfactory – mainly because our offering is highly specific. We have a narrow, exclusive focus on backend solutions written in Python, usually web apps. A cookie-cutter approach wouldn&#8217;t work here – before we hire a developer, we need to make sure that they&#8217;re not just great at programming. They need to be great at the exact type of programming that we do here.</span></p>
@@ -22,6 +25,15 @@ author: Agnieszka Twardosz
     <p><b>A: </b><span style="font-weight: 400;">Please give us a quick overview of how the interview process for the Senior Python Developer position works right now at Reef Technologies. What are the stages, and how much time can a candidate expect to spend in the process?</span></p>
     <p><b>P: </b><span style="font-weight: 400;">There are three stages: (1) A basic coding test that takes between 10 and 40 minutes. (2) A difficult debugging task, I’d say it takes around 2 hours to complete, but it varies significantly between candidates. And (3) a mini-project where the variance is even larger, as there are almost no limits to how little or how much time it can take. Good candidates are generally pretty fast, though. </span></p>
     <p><span style="font-weight: 400;">Unfortunately, I cannot be very specific because it would skew the results of the test. What I can say is that a senior engineer takes 40 minutes on average to verify a single solution to the final, third stage of the process. If too many candidates were to reach it, the reviewing would drag us away from our projects far too often.</span></p>
+    <div class="elementor-alert elementor-alert-info" role="alert">
+        <span class="elementor-alert-description">
+            <strong>May 2026 Update:</strong>
+            <p>In light of the growing impact of LLMs, which are increasingly helping candidates complete tasks, we had to adapt our recruitment process. As a result, the number of stages has increased.</p>
+            <p>The first stage (1) is a short automated scripting task. Next (2), there is a programming game in which you build a decision-making solution for handling resources and logistics. Then (3), there is a 30-minute video call with our recruiter to assess general communication skills.</p>
+            <p>After that (4), there are two programming tasks focused on designing technical solutions and system architecture. Finally (5), there is a conversation with one of our engineers to get to know each other better, discuss the candidate’s experience, and introduce the final task.</p>
+            <p>After successfully completing all stages, we invite candidates to a fully paid evaluation / trial period.</p>
+        </span>
+    </div>
     <p><b>A: </b><span style="font-weight: 400;">Say a developer does well enough according to your metrics. What’s next?</span></p>
     <p><b>P: </b><span style="font-weight: 400;">If an engineer delivers adequate solutions at all three stages, we invite them to work with us on a fully paid trial period to see if we are a good match. Depending on the candidate, it may take between three days and three months before we decide to work together in the long term. If both parties are satisfied, we simply stop calling the relationship a trial period.</span></p>
     <p><b>A: </b><span style="font-weight: 400;">What made you choose those particular testing methods?</span></p>
