@@ -20,7 +20,7 @@ author: Reef Technologies
 
 <p>Imagine you’re a malicious provider with 100 nodes (each providing some GPU power), one node is really powerful, while the others are garbage. You receive the same test request on all 100 nodes. Cheating is simple: you calculate a result on the strongest node. Then, share the answer with your other nodes, and they will act as if they did the calculation themselves.</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/cheating.jpg"alt="Cheating scenario">
+<img src="/assets/blog/malicious-GPU-provider-detection/cheating.jpg" alt="Cheating scenario">
 
 <p>One may say, "Send different tasks to each node!"</p>
 
@@ -64,7 +64,7 @@ author: Reef Technologies
 <h3>Step 4: Mixing</h3>
 <p>So we can answer 240 prompts in one go. Any GPU can. That means we have to answer 240 x NUMBER_OF_NODES prompts to validate them? If we send only a single prompt to each node, malicious providers can pretend to have 240 nodes using a single GPU. Or maybe we can use this fact to our advantage? Can we?</p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/yes-we-can.jpg">
+<img src="/assets/blog/malicious-GPU-provider-detection/yes-we-can.jpg" alt="Yes, we can use batching to our advantage">
 
 <p>Let’s find answers for a batch of 240 prompts on trusted hardware, and then… split them up and hide them among “placeholder” prompts we don’t have answers to! So one answered batch yields 240 batches of:
 <ul>
@@ -73,7 +73,7 @@ author: Reef Technologies
 </ul>
 </p>
 
-<img src="/assets/blog/malicious-GPU-provider-detection/hiding-real-prompts.jpg">
+<img src="/assets/blog/malicious-GPU-provider-detection/hiding-real-prompts.jpg" alt="Hiding one answered prompt among 239 placeholder prompts">
 
 <p>But the tested nodes will not know which of the 240 they receive is the “real one”! They have to answer all of them (in a single go, that’s GPU vectori-batchi-black-hole-magification working). And we’ll only check the one answer. Only the one. Demotivating? Well, you’re a computer, deal with it. And if the answer doesn’t match the expected one, then:
 <ul>
