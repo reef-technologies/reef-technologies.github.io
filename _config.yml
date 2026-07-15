@@ -18,16 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Reef Technologies
+email: hello@reef-technologies.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Reef Technologies is a backend Python software house. We design and build the
+  systems you cannot see: APIs, databases, libraries, search algorithms,
+  optimizers, and machine learning infrastructure.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://reef-technologies.com" # the base hostname & protocol for your site
+github_username: reef-technologies
 
 # Build settings
 theme: minima

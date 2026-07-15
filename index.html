@@ -1,5 +1,6 @@
 ---
 layout: default
+contact_form: true # loads reCAPTCHA + Contact Form 7 assets; only this page has the form
 ---
 
 <article
@@ -2342,12 +2343,14 @@ layout: default
                                         data-status="init"
                                       >
                                         <p>
-                                          Your name:<br />
+                                          <label for="contact-name">Your name:</label><br />
                                           <span
                                             class="wpcf7-form-control-wrap your-name"
                                             ><input
                                               type="text"
+                                              id="contact-name"
                                               name="name"
+                                              autocomplete="name"
                                               required
                                               value=""
                                               size="40"
@@ -2357,12 +2360,14 @@ layout: default
                                           /></span>
                                         </p>
                                         <p>
-                                          Your e-mail:<br />
+                                          <label for="contact-email">Your e-mail:</label><br />
                                           <span
                                             class="wpcf7-form-control-wrap your-email"
                                             ><input
                                               type="email"
+                                              id="contact-email"
                                               name="email"
+                                              autocomplete="email"
                                               required
                                               value=""
                                               size="40"
@@ -2372,11 +2377,12 @@ layout: default
                                           /></span>
                                         </p>
                                         <p>
-                                          Subject:<br />
+                                          <label for="contact-subject">Subject:</label><br />
                                           <span
                                             class="wpcf7-form-control-wrap your-subject"
                                             ><input
                                               type="text"
+                                              id="contact-subject"
                                               name="subject"
                                               required
                                               value=""
@@ -2387,16 +2393,18 @@ layout: default
                                           /></span>
                                         </p>
                                         <p>
-                                          Message:<br />
+                                          <label for="contact-message">Message:</label><br />
                                           <span
                                             class="wpcf7-form-control-wrap your-message"
                                           >
                                             <textarea
+                                              id="contact-message"
                                               name="message"
                                               required
                                               cols="40"
                                               rows="10"
                                               class="wpcf7-form-control wpcf7-textarea"
+                                              aria-required="true"
                                               aria-invalid="false"
                                             ></textarea>
                                           </span>
