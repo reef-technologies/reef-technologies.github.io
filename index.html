@@ -1,6 +1,6 @@
 ---
 layout: default
-contact_form: true # loads reCAPTCHA + Contact Form 7 assets; only this page has the form
+contact_form: true # consent-aware reCAPTCHA, loaded only when sending the form
 ---
 
 <article
@@ -2336,10 +2336,10 @@ contact_form: true # loads reCAPTCHA + Contact Form 7 assets; only this page has
                                         <ul></ul>
                                       </div>
                                       <form
+                                        id="reef-contact-form"
                                         action="https://getform.io/f/cfca5e38-7bdc-4cff-ac7d-b0a059c4a673"
                                         method="post"
                                         class="wpcf7-form init"
-                                        novalidate="novalidate"
                                         data-status="init"
                                       >
                                         <p>
@@ -2409,11 +2409,10 @@ contact_form: true # loads reCAPTCHA + Contact Form 7 assets; only this page has
                                             ></textarea>
                                           </span>
                                         </p>
-                                        <div class="wpcf7-form-control-wrap">
-                                          <div
-                                            class="wpcf7-form-control g-recaptcha wpcf7-recaptcha"
-                                          ></div>
-                                        </div>
+                                        <p class="reef-contact-notice">Sending this form uses Google reCAPTCHA for spam protection and Getform to deliver your message. You can decline Google protection and email <a href="mailto:{{ site.email }}">{{ site.email }}</a> instead. <a href="/privacy/">Privacy information</a>.</p>
+                                        <p id="reef-contact-status" class="reef-contact-notice" role="status" aria-live="polite"></p>
+                                        <button type="button" class="reef-cookie-settings" data-cookie-settings>Contact form privacy settings</button>
+                                        <noscript><p>Please use the email link to contact us without JavaScript.</p></noscript>
                                         <input
                                           type="hidden"
                                           id="captchaResponse"
@@ -2423,6 +2422,7 @@ contact_form: true # loads reCAPTCHA + Contact Form 7 assets; only this page has
                                           <input
                                             type="submit"
                                             value="Send"
+                                            disabled
                                             class="wpcf7-form-control wpcf7-submit"
                                           />
                                         </p>

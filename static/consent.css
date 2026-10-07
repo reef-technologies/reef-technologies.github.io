@@ -1,0 +1,89 @@
+/* Keep consent choices equally prominent. */
+#reef-cookie-panel[hidden] { display: none !important; }
+#reef-cookie-panel {
+  --reef-accent: #63ddd2;
+  position: fixed;
+  z-index: 2147483647;
+  bottom: 24px;
+  right: 24px;
+  left: auto;
+  width: calc(100% - 48px);
+  max-width: 480px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  border: 1px solid #c4d1cd;
+  border-radius: 18px;
+  box-shadow: 0 16px 64px #001c2440, 0 2px 8px #001c241a;
+  background: #f5f7f5;
+  color: #17212b;
+  font: 14px/1.6 system-ui, sans-serif;
+  text-align: left;
+  letter-spacing: normal;
+  color-scheme: light;
+}
+#reef-cookie-panel, #reef-cookie-panel * { box-sizing: border-box; }
+#reef-cookie-panel .reef-cookie-header {
+  padding: 22px 24px;
+  background: #132c30;
+  border-top: 4px solid var(--reef-accent);
+  color: #fff;
+}
+#reef-cookie-panel .reef-cookie-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+#reef-cookie-panel .reef-cookie-brand > span:first-child { font: 800 28px/1 system-ui, sans-serif; letter-spacing: -1.5px; color: #fff; }
+#reef-cookie-panel .reef-cookie-brand > span:first-child span { color: var(--reef-accent); }
+#reef-cookie-panel .reef-cookie-brand > span:last-child { border-left: 1px solid #ffffff40; padding-left: 14px; font: 600 10px/1.5 system-ui, sans-serif; letter-spacing: 1.8px; color: var(--reef-accent); }
+#reef-cookie-panel h2 { font: 650 25px/1.25 system-ui, sans-serif; letter-spacing: -.6px; margin: 0; color: #fff; width: auto; }
+#reef-cookie-panel p { margin: 0 0 12px; color: #17212b; font: inherit; }
+#reef-cookie-panel .reef-cookie-header p { color: #cfdddb; margin: 7px 0 0; }
+#reef-cookie-panel .reef-cookie-body { padding: 22px 24px 18px; }
+#reef-cookie-panel a { color: #1d605c; text-decoration: underline; text-underline-offset: 3px; }
+#reef-cookie-panel .reef-cookie-reassurance { font-weight: 600; font-size: 13px; }
+#reef-cookie-panel .reef-cookie-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0 16px; }
+#reef-cookie-panel button, .reef-cookie-settings {
+  padding: 11px 16px; border: 1px solid #bdcbc7; border-radius: 8px;
+  background: #fff; color: #17212b; font: 600 14px/1.4 system-ui, sans-serif;
+  cursor: pointer; text-transform: none; letter-spacing: normal; height: auto;
+  min-height: 44px; margin: 0; white-space: normal; box-shadow: none;
+}
+#reef-cookie-panel .reef-cookie-actions button { background: #173b3c; border-color: #173b3c; color: #fff; }
+#reef-cookie-panel button:hover, .reef-cookie-settings:hover { background: #e5efea; color: #17212b; }
+#reef-cookie-panel .reef-cookie-actions button:hover { background: #265352; border-color: #265352; color: #fff; }
+#reef-cookie-panel :focus-visible, .reef-cookie-settings:focus-visible { outline: 3px solid #268578; outline-offset: 3px; }
+#reef-cookie-panel details { border: 1px solid #d5ded9; border-radius: 10px; background: #fff; }
+#reef-cookie-panel summary { padding: 12px 16px; cursor: pointer; color: #234c48; font-weight: 600; min-height: 44px; }
+#reef-cookie-panel summary::marker { color: #39726a; }
+#reef-cookie-panel .reef-cookie-preferences { padding: 0 14px 14px; }
+#reef-cookie-panel .reef-cookie-necessary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 0 8px; border-top: 1px solid #e0e7e3; }
+#reef-cookie-panel .reef-cookie-necessary span { padding: 2px 8px; background: #e9f3ed; color: #28533f; font-size: 11px; font-weight: 600; border-radius: 20px; }
+#reef-cookie-panel .reef-cookie-preferences > p { font-size: 12px; color: #4f625d; }
+#reef-cookie-panel label.reef-cookie-option { display: flex; align-items: flex-start; gap: 11px; margin: 10px 0; padding: 12px; border: 1px solid #dbe4de; border-radius: 8px; background: #f5f8f5; cursor: pointer; font: inherit; text-align: left; }
+#reef-cookie-panel .reef-cookie-option strong { display: block; font-size: 14px; color: #17212b; }
+#reef-cookie-panel .reef-cookie-option span span { display: block; font-size: 12px; line-height: 1.6; color: #4a5e57; margin-top: 3px; }
+#reef-cookie-panel input[type="checkbox"] { flex: 0 0 18px; width: 18px; height: 18px; margin: 3px 0 0; padding: 0; appearance: auto; accent-color: #245d53; opacity: 1; position: static; }
+#reef-cookie-panel [data-consent="save"] { width: 100%; margin-top: 4px; }
+#reef-cookie-panel .reef-cookie-note { margin: 16px 0 4px; font-size: 11px; line-height: 1.8; color: #53635e; }
+#reef-cookie-panel [data-consent="close"] { display: block; padding: 8px 0; min-height: 36px; border: 0; background: transparent; color: #53635e; font-size: 11px; font-weight: 400; text-decoration: underline; text-underline-offset: 3px; }
+#reef-cookie-panel [data-consent="close"]:hover { color: #17212b; }
+@media (max-width: 520px) {
+  #reef-cookie-panel { right: 12px; bottom: 12px; width: calc(100% - 24px); max-height: calc(100dvh - 24px); border-radius: 14px; }
+  #reef-cookie-panel .reef-cookie-header { padding: 18px 20px; }
+  #reef-cookie-panel .reef-cookie-body { padding: 18px 20px 14px; }
+}
+@media (max-width: 350px) {
+  #reef-cookie-panel .reef-cookie-actions { grid-template-columns: 1fr; }
+  #reef-cookie-panel .reef-cookie-brand { gap: 10px; }
+  #reef-cookie-panel .reef-cookie-brand > span:last-child { padding-left: 10px; letter-spacing: 1px; }
+}
+
+.reef-privacy-links { padding: 1rem; font: 14px/1.5 system-ui, sans-serif; }
+.reef-privacy-links a { text-decoration: underline; }
+.reef-privacy-page { max-width: 55rem; margin: 2rem auto; padding: 1.5rem; font: 16px/1.6 system-ui, sans-serif; }
+.reef-privacy-page table { width: 100%; border-collapse: collapse; }
+.reef-privacy-page td, .reef-privacy-page th { padding: .6rem; border: 1px solid #aaa; text-align: left; }
+.reef-contact-notice { font: 16px/1.5 system-ui, sans-serif; }
+
+.reef-privacy-page { color: #17212b; background: #fff; padding-bottom: 5rem; overflow-wrap: anywhere; }
+.reef-privacy-page p, .reef-privacy-page h1, .reef-privacy-page h2 { color: #17212b; }
+.reef-privacy-page h2 { font: bold 1.4rem/1.5 system-ui, sans-serif; margin: 1.5rem 0 .5rem; }

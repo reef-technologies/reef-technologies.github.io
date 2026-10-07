@@ -1488,12 +1488,14 @@
 		<link rel="icon" href="/static/wp-content/uploads/2020/12/cropped-reef_logo-final-02-1-192x192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="/static/wp-content/uploads/2020/12/cropped-reef_logo-final-02-1-180x180.png" />
 		<meta name="msapplication-TileImage" content="/static/wp-content/uploads/2020/12/cropped-reef_logo-final-02-1-270x270.png" />
-		{%- if page.contact_form %}
-		<script src="https://www.google.com/recaptcha/api.js?render={{ site.recaptcha_site_key }}"></script>
-		{%- endif %}
+        <link rel="stylesheet" href="/static/consent.css">
+        <script src="/static/consent.js"></script>
+        {%- if page.contact_form %}
+        <script src="/static/contact-consent.js" data-site-key="{{ site.recaptcha_site_key }}" defer></script>
+        {%- endif %}
 	</head>
 
-	<script src="https://cdn.counter.dev/script.js" data-id="f525abc7-aecb-4241-8754-d281ee295ed2" data-utcoffset="1"></script>
+
 
 	<body id="top" class="home page-template-default page page-id-1728 wp-custom-logo header-horizontal site-layout-full elementor-default elementor-kit-1169 elementor-page elementor-page-1728" itemtype="https://schema.org/WebPage" itemscope>
 		<div class="whole-layout">
@@ -1562,9 +1564,7 @@
 		<link rel='stylesheet' id='premium-addons-css' href='/static/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-css/premium-addons.min.css?ver=4.0.8' type='text/css' media='all' />
 		<script type='text/javascript' src='/static/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
 		<script type='text/javascript' src='/static/wp-content/plugins/sydney-toolbox/js/main-legacy.js?ver=20200504' id='st-carousel-js'></script>
-		{%- if page.contact_form %}
-		<script type='text/javascript' src='/static/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.1' id='contact-form-7-js'></script>
-		{%- endif %}
+
 		<script type='text/javascript' id='apollo13framework-plugins-js-extra'>
 			/* <![CDATA[ */
 			var ApolloParams = { "ajaxurl": "https:\/\/reef.pl\/wp-admin\/admin-ajax.php", "site_url": "https:\/\/reef.pl\/", "defimgurl": "https:\/\/reef.pl\/wp-content\/themes\/rife-free\/images\/holders\/photo.png", "options_name": "apollo13_option_rife", "load_more": "Load more", "loading_items": "Loading next items", "anchors_in_bar": "1", "scroll_to_anchor": "1", "writing_effect_mobile": "", "writing_effect_speed": "10", "hide_content_under_header": "off", "default_header_variant": "normal", "header_sticky_top_bar": "", "header_color_variants": "sticky", "show_header_at": "0", "header_normal_social_colors": "color|black_hover||_hover", "header_light_social_colors": "|_hover||_hover", "header_dark_social_colors": "|_hover||_hover", "header_sticky_social_colors": "semi-transparent|color_hover||_hover", "close_mobile_menu_on_click": "1", "menu_overlay_on_click": "", "allow_mobile_menu": "1", "submenu_opener": "fa-angle-down", "submenu_closer": "fa-angle-up", "submenu_third_lvl_opener": "fa-angle-right", "submenu_third_lvl_closer": "fa-angle-left", "posts_layout_mode": "packery", "products_brick_margin": "0", "products_layout_mode": "packery", "albums_list_layout_mode": "packery", "album_bricks_thumb_video": "", "works_list_layout_mode": "packery", "work_bricks_thumb_video": "", "people_list_layout_mode": "fitRows", "lg_lightbox_share": "1", "lg_lightbox_controls": "1", "lg_lightbox_download": "", "lg_lightbox_counter": "1", "lg_lightbox_thumbnail": "1", "lg_lightbox_show_thumbs": "", "lg_lightbox_autoplay": "1", "lg_lightbox_autoplay_open": "", "lg_lightbox_progressbar": "1", "lg_lightbox_full_screen": "1", "lg_lightbox_zoom": "1", "lg_lightbox_mode": "lg-slide", "lg_lightbox_speed": "600", "lg_lightbox_preload": "1", "lg_lightbox_hide_delay": "2000", "lg_lightbox_autoplay_pause": "5000", "lightbox_single_post": "" };
@@ -1590,16 +1590,12 @@
 			var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "version": "3.0.12", "is_static": false, "legacyMode": { "elementWrappers": true }, "urls": { "assets": "\/static\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "editorPreferences": [] }, "kit": { "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 1728, "title": "Reef%20-%20Reef%20Technologies", "excerpt": "", "featuredImage": "" } };
 		</script>
 		<script type='text/javascript' src='/static/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.0.12' id='elementor-frontend-js'></script>
-		{%- if page.contact_form %}
-		<script>
-			grecaptcha.ready(function() {
-				grecaptcha.execute('{{ site.recaptcha_site_key }}', {action: 'homepage'})
-				.then(function(token) {
-				  document.getElementById('captchaResponse').value = token;
-				});
-			  });
-		 </script>
-		{%- endif %}
+        <footer class="reef-privacy-links">
+            <button type="button" class="reef-cookie-settings" data-cookie-settings>Cookie settings</button>
+            <a href="/privacy/">Privacy and cookies</a>
+        </footer>
+        {% include consent.html %}
+
 	</body>
 
 </html>
